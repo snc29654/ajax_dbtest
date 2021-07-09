@@ -70,7 +70,7 @@ try{
 	file_put_contents("../db_log.txt", $row['kind']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
     
-    echo strip_tags($row['id']);      echo " ";
-    echo strip_tags($row['kind']);   echo " ";   
+    echo strip_tags($row['kind']);      echo " ";
+    echo strip_tags($row['contents']);   echo " ";   
     }
 ?>
