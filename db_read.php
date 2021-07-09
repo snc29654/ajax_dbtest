@@ -64,21 +64,13 @@ try{
 }
     while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
 ?>
-<html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
-  <body>
 
 <?php
 	file_put_contents("../db_log.txt", $row['id']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['kind']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
     
-    echo $row['id'];      echo " ";
-    echo $row['kind'];   echo " ";   
-    echo $row['contents']; 		echo "<br />";
+    echo strip_tags($row['id']);      echo " ";
+    echo strip_tags($row['kind']);   echo " ";   
     }
 ?>
-  </body>
-</html>
