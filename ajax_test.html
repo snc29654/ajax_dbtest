@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>example</title>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function()
+    {
+		
+        $('#send').click(function()
+        {
+           var data = {
+		        kind : $('#kind').val(),
+		        contents : $('#contents').val(),
+		        param2 : $('#param2').val()
+	        };
+ 
+            $.ajax({
+                type: "post",
+                url: "db_test.php",
+                data: data,
+                success: function(data, dataType)
+                {
+                    document.getElementById( "phplog" ).value = data ;
+				
+                },
+                error: function()
+                {
+                    alert('送信失敗');
+                }
+            });
+
+            return false;
+        });
+
+        $('#logread').click(function()
+        {
+           var data = "dummy"
+ 
+            $.ajax({
+                type: "post",
+                url: "db_read.php",
+                data: data,
+                success: function(data, dataType)
+                {
+                    document.getElementById( "phplog" ).value = data ;
+				
+                },
+                error: function()
+                {
+                    alert('送信失敗');
+                }
+            });
+            return false;
+        });
+
+
+
+    });
+    </script>
+</head>
+<body>
+<form id="testForm" name="testForm" method="post" >
+<ul>
+<li><input type="text" id="kind" name="kind" placeholder="kind"></li>
+<li><input type="text" id="contents" name="contents" placeholder="contents" ></li>
+<li><textarea name="phplog" rows="20" cols="80" id="phplog" placeholder="phplog" ></textarea></li>
+</ul>
+<p class="more"><input id="send" type="submit" value="送る"></p>
+<p class="more"><input id="logread" type="submit" value="ログ読み出し"></p>
+</form>
+</body>
+</html>
