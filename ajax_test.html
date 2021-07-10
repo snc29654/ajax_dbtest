@@ -14,7 +14,7 @@
            var data = {
 		        kind : $('#kind').val(),
 		        contents : $('#contents').val(),
-		        param2 : $('#param2').val()
+		        action : $('#action').val()
 	        };
  
             $.ajax({
@@ -68,8 +68,18 @@
 <li><input type="text" size=78 id="contents" name="contents" placeholder="contents" ></li>
 <li><textarea name="phplog" rows="20" cols="80" id="phplog" placeholder="phplog" ></textarea></li>
 </ul>
-<p class="more"><input id="send" type="submit" value="送る"></p>
-<p class="more"><input id="logread" type="submit" value="ログ読み出し"></p>
+<select name="action" id="action">
+    <option value="add">追加登録</option>
+    <option value="delete">指定キー削除</option>
+    <option value="srch">検索ワード表示</option>
+    <option value="keyview">指定キー表示</option>
+    <option value="kindview">題名検索</option>
+    <option value="lastview">最後のレコード</option>
+    <option value="delall">全削除</option>
+    </select>
+
+<p class="more"><input id="send" type="submit" value="DB書き込み"></p>
+<p class="more"><input id="logread" type="submit" value="DB読み出し"></p>
 </form>
 </body>
 </html>

@@ -9,6 +9,7 @@ $dbtable = "kind";
 
 file_put_contents("../from_html.txt", $_POST['kind'] ."\n",FILE_APPEND);
 file_put_contents("../from_html.txt", $_POST['contents']."\n",FILE_APPEND);
+file_put_contents("../from_html.txt", $_POST['action']."\n",FILE_APPEND);
 
 try{
 	
@@ -34,7 +35,12 @@ try{
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 
-	$sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}', contents = '${_POST['contents']}';";
+    if(strcmp($_POST['action'],"delall")==0){
+        $sql = "DELETE FROM memo.kind";
+    }
+    if(strcmp($_POST['action'],"add")==0){
+        $sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}', contents = '${_POST['contents']}';";
+    }
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 
@@ -54,6 +60,7 @@ try{
 }catch(PDOException $Exception){
     die('接続エラー：' .$Exception->getMessage());
 }
+
 try{
     $sql = "SELECT * FROM memo.kind";
     $stmh = $pdo->prepare($sql);
