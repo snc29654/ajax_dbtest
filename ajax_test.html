@@ -37,7 +37,12 @@
 
         $('#logread').click(function()
         {
-           var data = "dummy"
+           var data = {
+		        kind : $('#kind').val(),
+		        contents : $('#contents').val(),
+		        action : $('#action').val(),
+		        srch_word : $('#srch_word').val()
+	        };
  
             $.ajax({
                 type: "post",
@@ -64,9 +69,10 @@
 <body>
 <form id="testForm" name="testForm" method="post" >
 <ul>
-<li><input type="text" size=78 id="kind" name="kind" placeholder="kind"></li>
-<li><textarea name="contents" rows="15" cols="80" id="contents" placeholder="contents" ></textarea></li>
-<li><textarea name="phplog" rows="15" cols="80" id="phplog" placeholder="phplog" ></textarea></li>
+<li><input type="text" size=78 id="kind" name="kind" placeholder="種別"></li>
+<li><textarea name="contents" rows="15" cols="80" id="contents" placeholder="内容" ></textarea></li>
+<li><textarea name="phplog" rows="15" cols="80" id="phplog" placeholder="読み出し" ></textarea></li>
+<li><input type="text" size=20 id="srch_word" name="srch_word" placeholder="検索ワード"></li>
 </ul>
 <select name="action" id="action">
     <option value="add">追加登録</option>

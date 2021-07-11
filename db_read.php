@@ -55,8 +55,15 @@ try{
     die('接続エラー：' .$Exception->getMessage());
 }
 */
+
+$srch_word = $_POST['srch_word'];
 try{
-    $sql = "SELECT * FROM memo.kind";
+
+    if(strcmp($_POST['action'],"srch")==0){
+        $sql = "SELECT * FROM memo.kind WHERE Contents LIKE '%" . $srch_word . "%'";
+    }else{
+        $sql = "SELECT * FROM memo.kind";
+    }
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 }catch(PDOException $Exception){
