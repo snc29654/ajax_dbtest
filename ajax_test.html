@@ -75,7 +75,7 @@
 <li><input type="text" size=20 id="srch_word" name="srch_word" placeholder="検索ワード"></li>
 </ul>
 
-<p class="more"><input id="send" type="submit" value="DB書き込み">
+<p class="more"><input id="send" type="submit" value="DB書き込み"onclick="clickwrite()"/>
 <select name="action" id="action">
     <option value="add">追加登録（書き込み）</option>
     <option value="delall">全削除（書き込み）</option>
@@ -106,8 +106,19 @@ function clickread(){
         }
 
     }
+}
+function clickwrite(){
 
+    if(($('#action').val()=="add")){
+        if(($('#kind').val()=="")){
+        alert("種別が未入力です");    
+        }
 
+        if(($('#contents').val()=="")){
+        alert("内容が未入力です");    
+        }
+
+    }
 
 }
 </script>
