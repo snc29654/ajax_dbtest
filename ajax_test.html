@@ -83,7 +83,28 @@
     </select>
 
 <p class="more"><input id="send" type="submit" value="DB書き込み"></p>
-<p class="more"><input id="logread" type="submit" value="DB読み出し"></p>
+<p class="more"><input id="logread" type="submit" value="DB読み出し"onclick="clickread()"/></p>
 </form>
 </body>
 </html>
+
+<script>
+function clickread(){
+
+    if(($('#action').val()=="srch")){
+        if(($('#srch_word').val()=="")){
+            alert("検索ワードが未入力です");    
+        }
+
+    }
+    if(($('#action').val()=="kindselect")){
+        if(($('#kind').val()=="")){
+            alert("種別が未入力です");    
+        }
+
+    }
+
+
+
+}
+</script>
