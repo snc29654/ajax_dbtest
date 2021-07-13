@@ -28,15 +28,15 @@ $srch_word = $_POST['srch_word'];
 $kind = $_POST['kind'];
 try{
 
-    if(strcmp($_POST['action'],"srch")==0){
+    if(strcmp($_POST['actionread'],"srch")==0){
 
         $sql = "SELECT * FROM memo.kind WHERE Contents LIKE '%" . $srch_word . "%'";
 
-    }else if(strcmp($_POST['action'],"kindselect")==0){
+    }else if(strcmp($_POST['actionread'],"kindselect")==0){
 
         $sql = "SELECT * FROM memo.kind WHERE kind LIKE '%" . $kind . "%'";
 
-    }else if(strcmp($_POST['action'],"readall")==0){
+    }else if(strcmp($_POST['actionread'],"readall")==0){
 
         $sql = "SELECT * FROM memo.kind";
     }else{
