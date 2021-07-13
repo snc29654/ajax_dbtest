@@ -5,10 +5,6 @@ $user = "root";
 $pass = ""; 
 $dbname = "memo"; 
 $dbtable = "kind"; 
-//if(!$_POST['kind'] || !$_POST['contents']){exit("未入力あり");}
-
-//file_put_contents("../from_html.txt", $_POST['kind'] ."\n",FILE_APPEND);
-//file_put_contents("../from_html.txt", $_POST['contents']."\n",FILE_APPEND);
 
 try{
 	
@@ -27,40 +23,19 @@ try{
 }catch(PDOException $Exception){
     die('接続できません：' .$Exception->getMessage());
 }
-/*
-try{
-
-	$sql = "SET NAMES UTF8;";
-    $stmh = $pdo->prepare($sql);
-    $stmh->execute();
-
-	$sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}', contents = '${_POST['contents']}';";
-    $stmh = $pdo->prepare($sql);
-    $stmh->execute();
-
-
-}catch(PDOException $Exception){
-    die('接続エラー：' .$Exception->getMessage());
-}
-
-try{
-    $pdo = new PDO(
-        'mysql:host=localhost;dbname=memo;charset=utf8',
-        'root',
-        ''
-    );
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-}catch(PDOException $Exception){
-    die('接続エラー：' .$Exception->getMessage());
-}
-*/
 
 $srch_word = $_POST['srch_word'];
+$kind = $_POST['kind'];
 try{
 
     if(strcmp($_POST['action'],"srch")==0){
+
         $sql = "SELECT * FROM memo.kind WHERE Contents LIKE '%" . $srch_word . "%'";
+
+    }else if(strcmp($_POST['action'],"kindselect")==0){
+
+        $sql = "SELECT * FROM memo.kind WHERE kind LIKE '%" . $kind . "%'";
+
     }else{
         $sql = "SELECT * FROM memo.kind";
     }
