@@ -36,8 +36,11 @@ try{
 
         $sql = "SELECT * FROM memo.kind WHERE kind LIKE '%" . $kind . "%'";
 
-    }else{
+    }else if(strcmp($_POST['action'],"readall")==0){
+
         $sql = "SELECT * FROM memo.kind";
+    }else{
+ 
     }
     $stmh = $pdo->prepare($sql);
     $stmh->execute();

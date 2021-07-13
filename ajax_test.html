@@ -75,13 +75,12 @@
 <li><input type="text" size=20 id="srch_word" name="srch_word" placeholder="検索ワード"></li>
 </ul>
 <select name="action" id="action">
-    <option value="add">追加登録</option>
-    <option value="delete">指定キー削除</option>
-    <option value="srch">検索ワード表示</option>
-    <option value="kindselect">指定種別表示</option>
-    <option value="kindview">題名検索</option>
-    <option value="lastview">最後のレコード</option>
-    <option value="delall">全削除</option>
+    <option value="add">追加登録（書き込み）</option>
+    <option value="delall">全削除（書き込み）</option>
+    <option value="readall">全読み出し（読み出し）</option>
+    <option value="srch">検索ワード選択（読み出し）</option>
+    <option value="kindselect">種別選択（読み出し）</option>
+    <option value="kindview">題名検索（読み出し）</option>
     </select>
 
 <p class="more"><input id="send" type="submit" value="DB書き込み"></p>
