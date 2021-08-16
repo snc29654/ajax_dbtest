@@ -34,12 +34,12 @@ try{
 	$sql = "SET NAMES UTF8;";
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
-
+    $date=date('Y年m月d日 H時i分s秒');
     if(strcmp($_POST['action'],"delall")==0){
         $sql = "DELETE FROM memo.kind";
     }
     if(strcmp($_POST['action'],"add")==0){
-        $sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}', contents = '${_POST['contents']}';";
+        $sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
     }
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
@@ -77,8 +77,8 @@ try{
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
     
     echo strip_tags($row['kind']);      echo "\n";
-    echo "***************\n";
+    echo "*************************************\n";
     echo strip_tags($row['contents']);   echo "\n";   
-    echo "***************\n";
+    echo "*************************************\n";
     }
 ?>
