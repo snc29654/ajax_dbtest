@@ -4,7 +4,7 @@ $host = "localhost";
 $user = "root"; 
 $pass = ""; 
 $dbname = "memo"; 
-$dbtable = "kind"; 
+$dbtable = "kind_t"; 
 //if(!$_POST['kind'] || !$_POST['contents']){exit("未入力あり");}
 
 file_put_contents("../from_html.txt", $_POST['kind'] ."\n",FILE_APPEND);
@@ -22,7 +22,7 @@ try{
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $pdo->exec("create table if not exists kind(
+    $pdo->exec("create table if not exists kind_t(
         id int not null auto_increment primary key,
         kind varchar(40) unique,
         contents text
@@ -46,7 +46,7 @@ try{
     $stmh->execute();
     $date=date('Y年m月d日 H時i分s秒');
     if(strcmp($_POST['action'],"delall")==0){
-        $sql = "DELETE FROM memo.kind";
+        $sql = "DELETE FROM memo.kind_t";
     }
     if(strcmp($_POST['action'],"add")==0){
         $sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
@@ -72,7 +72,7 @@ try{
 }
 
 try{
-    $sql = "SELECT * FROM memo.kind";
+    $sql = "SELECT * FROM memo.kind_t";
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 }catch(PDOException $Exception){

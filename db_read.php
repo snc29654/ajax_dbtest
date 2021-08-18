@@ -4,7 +4,7 @@ $host = "localhost";
 $user = "root"; 
 $pass = ""; 
 $dbname = "memo"; 
-$dbtable = "kind"; 
+$dbtable = "kind_t"; 
 
 try{
 	
@@ -30,15 +30,15 @@ try{
 
     if(strcmp($_POST['actionread'],"srch")==0){
 
-        $sql = "SELECT * FROM memo.kind WHERE Contents LIKE '%" . $srch_word . "%'";
+        $sql = "SELECT * FROM memo.kind_t WHERE Contents LIKE '%" . $srch_word . "%'";
 
     }else if(strcmp($_POST['actionread'],"kindselect")==0){
 
-        $sql = "SELECT * FROM memo.kind WHERE kind LIKE '%" . $kind . "%'";
+        $sql = "SELECT * FROM memo.kind_t WHERE kind LIKE '%" . $kind . "%'";
 
     }else if(strcmp($_POST['actionread'],"readall")==0){
 
-        $sql = "SELECT * FROM memo.kind";
+        $sql = "SELECT * FROM memo.kind_t";
     }else{
  
     }
