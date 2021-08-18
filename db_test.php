@@ -21,6 +21,16 @@ try{
         ''
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $pdo->exec("create table if not exists kind(
+        id int not null auto_increment primary key,
+        kind varchar(40) unique,
+        contents text
+      )");
+  
+
+
+
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 	$pdo->query("SET NAMES UTF8;");
 
