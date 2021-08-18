@@ -42,8 +42,10 @@
 		            kind : $('#kind').val(),
 		            contents : $('#contents').val(),
 		            actionread : $('#actionread').val(),
-		            srch_word : $('#srch_word').val()
-	            };
+		            srch_word : $('#srch_word').val(),
+		            srchid_value : $('#srchid_value').val()
+
+                };
  
                 $.ajax({
                     type: "post",
@@ -82,6 +84,7 @@
 <li><textarea name="contents" rows="15" cols="80" id="contents" placeholder="内容" ></textarea></li>
 <li><textarea name="phplog" rows="15" cols="80" id="phplog" placeholder="読み出し" ></textarea></li>
 <li><input type="text" size=20 id="srch_word" name="srch_word" placeholder="検索ワード">
+<input type="text" size=5 id="srchid_value" name="srchid_value" placeholder="検索id"></li>
 <input type="text" size=5 id="delid_value" name="delid_value" placeholder="削除id"></li>
 </ul>
 
@@ -95,6 +98,7 @@
 <select name="actionread" id="actionread">
     <option value="readall">全読み出し（読み出し）</option>
     <option value="srch">検索ワード選択（読み出し）</option>
+    <option value="srchid">検索ID（読み出し）</option>
     <option value="kindselect">種別選択（読み出し）</option>
     </select></p>
 <input type="reset" value="クリア">
