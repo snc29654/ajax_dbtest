@@ -10,7 +10,8 @@ $dbtable = "kind_t";
 file_put_contents("../from_html.txt", $_POST['kind'] ."\n",FILE_APPEND);
 file_put_contents("../from_html.txt", $_POST['contents']."\n",FILE_APPEND);
 file_put_contents("../from_html.txt", $_POST['action']."\n",FILE_APPEND);
-
+//file_put_contents("../from_html.txt", $_POST['delid_value']."\n",FILE_APPEND);
+//$delid_value = $_POST['delid_value'];
 try{
 	
 	$dsn = "mysql:dbname=memo;host=localhost;charset=utf8;";
@@ -47,6 +48,9 @@ try{
     $date=date('Y年m月d日 H時i分s秒');
     if(strcmp($_POST['action'],"delall")==0){
         $sql = "DELETE FROM memo.kind_t";
+    }
+    if(strcmp($_POST['action'],"delid")==0){
+        $sql = "DELETE FROM memo.kind_t WHERE id = '${_POST['delid_value']}'" ;
     }
     if(strcmp($_POST['action'],"add")==0){
         $sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
