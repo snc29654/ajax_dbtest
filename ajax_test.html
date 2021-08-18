@@ -109,6 +109,12 @@
 
 <script>
 function clickread(){
+    if(($('#actionread').val()=="srchid")){
+        if(($('#srchid_value').val()=="")){
+            alert("検索IDが未入力です");    
+        }
+
+    }
 
     if(($('#actionread').val()=="srch")){
         if(($('#srch_word').val()=="")){
