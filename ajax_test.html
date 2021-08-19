@@ -54,7 +54,7 @@
                     success: function(data, dataType)
                     {
                         document.getElementById( "phplog" ).value = data ;
-				
+                        $('#result').html(data);
                     },
                     error: function()
                     {
@@ -104,6 +104,8 @@
 <input type="reset" value="クリア">
 </form>
 <input type="date">
+<div id="result"></div>
+
 </body>
 </html>
 

@@ -58,12 +58,10 @@ try{
 	file_put_contents("../db_log.txt", $row['id']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['kind']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
-    
-    echo "id=";echo strip_tags($row['id']);      echo "\n";
-    echo "*************************************\n";
-    echo strip_tags($row['kind']);      echo "\n";
-    echo "*************************************\n";
-    echo strip_tags($row['contents']);   echo "\n";   
-    echo "*************************************\n";
+    echo "<table border =\"3\">";    
+    echo "<tbody><tr><td>";echo "id=";echo strip_tags($row['id']);      echo "\n";echo "<br>";
+    echo strip_tags($row['kind']);      echo "\n";echo "<br>";
+    echo strip_tags($row['contents']);   echo "\n";echo "<br>";   
+    echo "</tbody></tr></td>";
     }
 ?>
