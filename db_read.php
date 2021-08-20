@@ -27,7 +27,11 @@ try{
 $srch_word = $_POST['srch_word'];
 
 $kind = $_POST['kind'];
+
 try{
+
+
+
     if(strcmp($_POST['actionread'],"srchid")==0){
 
         $sql = "SELECT * FROM memo.kind_t WHERE id = '${_POST['srchid_value']}'" ;
@@ -46,6 +50,8 @@ try{
     }else{
  
     }
+
+
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 }catch(PDOException $Exception){
@@ -58,10 +64,16 @@ try{
 	file_put_contents("../db_log.txt", $row['id']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['kind']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
+
+    $id = $row['id'];
+    $contents = $row['contents'];
+
     echo "<table border =\"3\">";    
     echo "<tbody><tr><td>";echo "id=";echo strip_tags($row['id']);      echo "\n";echo "<br>";
     echo strip_tags($row['kind']);      echo "\n";echo "<br>";
-    echo strip_tags($row['contents']);   echo "\n";echo "<br>";   
+    echo "<textarea name=\"contents\" rows=\"15\" cols=\"80\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
     echo "</tbody></tr></td>";
+
+   
     }
 ?>
