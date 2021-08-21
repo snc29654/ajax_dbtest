@@ -4,7 +4,7 @@ $host = "localhost";
 $user = "root"; 
 $pass = ""; 
 $dbname = "memo"; 
-$dbtable = "kind_t"; 
+$dbtable = "kind_t1"; 
 
 try{
 	
@@ -34,19 +34,19 @@ try{
 
     if(strcmp($_POST['actionread'],"srchid")==0){
 
-        $sql = "SELECT * FROM memo.kind_t WHERE id = '${_POST['srchid_value']}'" ;
+        $sql = "SELECT * FROM memo.kind_t1 WHERE id = '${_POST['srchid_value']}'" ;
 
     }else if(strcmp($_POST['actionread'],"srch")==0){
 
-        $sql = "SELECT * FROM memo.kind_t WHERE Contents LIKE '%" . $srch_word . "%'";
+        $sql = "SELECT * FROM memo.kind_t1 WHERE Contents LIKE '%" . $srch_word . "%'";
 
     }else if(strcmp($_POST['actionread'],"kindselect")==0){
 
-        $sql = "SELECT * FROM memo.kind_t WHERE kind LIKE '%" . $kind . "%'";
+        $sql = "SELECT * FROM memo.kind_t1 WHERE kind LIKE '%" . $kind . "%'";
 
     }else if(strcmp($_POST['actionread'],"readall")==0){
 
-        $sql = "SELECT * FROM memo.kind_t";
+        $sql = "SELECT * FROM memo.kind_t1";
     }else{
  
     }
@@ -64,15 +64,16 @@ try{
 	file_put_contents("../db_log.txt", $row['id']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['kind']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
+	file_put_contents("../db_log.txt", $row['answer']."\n",FILE_APPEND);
 
     $id = $row['id'];
     $contents = $row['contents'];
-    $answer="ここには回答が入ります";        
+    $answer=$row['answer'];        
     echo "<table border =\"3\">";    
     echo "<tbody><tr><td>";echo "id=";echo strip_tags($row['id']);      echo "\n";echo "<br>";
     echo strip_tags($row['kind']);      echo "\n";echo "<br>";
     echo "<textarea name=\"contents\" rows=\"15\" cols=\"80\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
-    echo "<textarea name=\"contents\" rows=\"15\" cols=\"80\" id=\"contents\" placeholder=\"回答\" >$answer</textarea>";
+    echo "<textarea name=\"answer\" rows=\"15\" cols=\"80\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
     echo "</tbody></tr></td>";
 
    

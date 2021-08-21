@@ -14,8 +14,10 @@
                 var data = {
 		            kind : $('#kind').val(),
 		            contents : $('#contents').val(),
+		            answer : $('#answer').val(),
 		            action : $('#action').val(),
-		            delid_value : $('#delid_value').val()
+		            delid_value : $('#delid_value').val(),
+		            updateid_value : $('#updateid_value').val()
 	            };
  
                 $.ajax({
@@ -41,6 +43,7 @@
                 var data = {
 		            kind : $('#kind').val(),
 		            contents : $('#contents').val(),
+		            answer : $('#answer').val(),
 		            actionread : $('#actionread').val(),
 		            srch_word : $('#srch_word').val(),
 		            srchid_value : $('#srchid_value').val()
@@ -82,15 +85,18 @@
 <ul>
 <li><input type="text" size=78 id="kind" name="kind" placeholder="種別"></li>
 <li><textarea name="contents" rows="15" cols="80" id="contents" placeholder="内容" ></textarea></li>
+<li><textarea name="answer" rows="15" cols="80" id="answer" placeholder="回答" ></textarea></li>
 <li><textarea name="phplog" rows="15" cols="80" id="phplog" placeholder="読み出し" ></textarea></li>
 <li><input type="text" size=20 id="srch_word" name="srch_word" placeholder="検索ワード">
 <input type="text" size=5 id="srchid_value" name="srchid_value" placeholder="検索id"></li>
 <input type="text" size=5 id="delid_value" name="delid_value" placeholder="削除id"></li>
+<input type="text" size=5 id="updateid_value" name="updateid_value" placeholder="回答id"></li>
 </ul>
 
 <p class="more"><input id="send" type="submit" value="DB書き込み"onclick="clickwrite()"/>
 <select name="action" id="action">
     <option value="add">追加登録（書き込み）</option>
+    <option value="add_answer">回答登録（書き込み）</option>
     <option value="delid">id検索削除（書き込み）</option>
     <option value="delall">全削除（書き込み）</option>
     </select></p>
