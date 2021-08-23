@@ -48,16 +48,16 @@ try{
     $stmh->execute();
     $date=date('Y年m月d日 H時i分s秒');
     if(strcmp($_POST['action'],"delall")==0){
-        $sql = "DELETE FROM memo.kind_t1";
+        $sql = "DELETE FROM kind_t1";
     }
     if(strcmp($_POST['action'],"delid")==0){
-        $sql = "DELETE FROM memo.kind_t1 WHERE id = '${_POST['delid_value']}'" ;
+        $sql = "DELETE FROM kind_t1 WHERE id = '${_POST['delid_value']}'" ;
     }
     if(strcmp($_POST['action'],"add")==0){
         $sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
     }
     if(strcmp($_POST['action'],"add_answer")==0){
-        $sql = "UPDATE memo.kind_t1 SET answer='${_POST['answer']}' WHERE id ='${_POST['updateid_value']}' ";
+        $sql = "UPDATE kind_t1 SET answer='${_POST['answer']}' WHERE id ='${_POST['updateid_value']}' ";
         //UPDATE mytbl SET price=1000 WHERE id=10;
     }
 
@@ -84,7 +84,7 @@ try{
 }
 
 try{
-    $sql = "SELECT * FROM memo.kind_t1";
+    $sql = "SELECT * FROM kind_t1";
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 }catch(PDOException $Exception){

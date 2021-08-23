@@ -34,19 +34,19 @@ try{
 
     if(strcmp($_POST['actionread'],"srchid")==0){
 
-        $sql = "SELECT * FROM memo.kind_t1 WHERE id = '${_POST['srchid_value']}'" ;
+        $sql = "SELECT * FROM kind_t1 WHERE id = '${_POST['srchid_value']}'" ;
 
     }else if(strcmp($_POST['actionread'],"srch")==0){
 
-        $sql = "SELECT * FROM memo.kind_t1 WHERE Contents LIKE '%" . $srch_word . "%'";
+        $sql = "SELECT * FROM kind_t1 WHERE Contents LIKE '%" . $srch_word . "%'";
 
     }else if(strcmp($_POST['actionread'],"kindselect")==0){
 
-        $sql = "SELECT * FROM memo.kind_t1 WHERE kind LIKE '%" . $kind . "%'";
+        $sql = "SELECT * FROM kind_t1 WHERE kind LIKE '%" . $kind . "%'";
 
     }else if(strcmp($_POST['actionread'],"readall")==0){
 
-        $sql = "SELECT * FROM memo.kind_t1";
+        $sql = "SELECT * FROM kind_t1";
     }else{
  
     }
