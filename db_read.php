@@ -68,8 +68,8 @@ try{
     echo "<table border =\"3\">";    
     echo "<tbody><tr><td>";echo "id=";echo strip_tags($row['id']);      echo "\n";echo "<br>";
     echo strip_tags($row['kind']);      echo "\n";echo "<br>";
-    echo "<textarea name=\"contents\" rows=\"15\" cols=\"80\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
-    echo "<textarea name=\"answer\" rows=\"15\" cols=\"80\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
+    echo "<textarea name=\"contents\" rows=\"10\" cols=\"80\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
+    echo "<textarea name=\"answer\" rows=\"10\" cols=\"80\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
     echo "</tbody></tr></td>";
 
    
