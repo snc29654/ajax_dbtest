@@ -1,11 +1,7 @@
 <?php
+
+include('param.php');
 header('Content-Type: text/html; charset=UTF-8');
-$host = "localhost"; 
-$user = "root"; 
-$pass = ""; 
-$dbname = "memo"; 
-$dbtable = "kind_t1"; 
-$dsn = "mysql:host=localhost;dbname=memo;charset=utf8";
 
 try{
 	

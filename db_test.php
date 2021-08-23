@@ -1,12 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
-$host = "localhost"; 
-$user = "root"; 
-$pass = ""; 
-$dbname = "memo"; 
-$dbtable = "kind_t1"; 
-
-$dsn = "mysql:host=localhost;dbname=memo;charset=utf8";
+include('param.php');
 
 //if(!$_POST['kind'] || !$_POST['contents']){exit("未入力あり");}
 
