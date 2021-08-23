@@ -5,15 +5,15 @@ $user = "root";
 $pass = ""; 
 $dbname = "memo"; 
 $dbtable = "kind_t1"; 
+$dsn = "mysql:host=localhost;dbname=memo;charset=utf8";
 
 try{
 	
-	$dsn = "mysql:dbname=memo;host=localhost;charset=utf8;";
 
     $pdo = new PDO(
-        'mysql:host=localhost;dbname=memo;charset=utf8',
-        'root',
-        ''
+        $dsn,
+        $user,
+        $pass
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
