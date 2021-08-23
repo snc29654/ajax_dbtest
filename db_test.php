@@ -56,7 +56,7 @@ try{
         $sql = "DELETE FROM kind_t1 WHERE id = '${_POST['delid_value']}'" ;
     }
     if(strcmp($_POST['action'],"add")==0){
-        $sql = "INSERT INTO `${dbtable}` SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
+        $sql = "INSERT INTO kind_t1 SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
     }
     if(strcmp($_POST['action'],"add_answer")==0){
         $sql = "UPDATE kind_t1 SET answer='${_POST['answer']}' WHERE id ='${_POST['updateid_value']}' ";
