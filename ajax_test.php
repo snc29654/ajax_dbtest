@@ -158,8 +158,8 @@ function clickwrite(){
     <p><input type="text" size=5 id="jpgid_value" name="jpgid_value" placeholder="画像id"></p>
     <p><input type="submit" value="upload" /></p>
    </form>
-   <a href="http://snc29654.php.xdomain.jp/jpg_view_many.php">php画像表示</a><br>
-  
+   <a href="jpg_display.php">画像表示</a><br/>
+
    <?php
    if($_SERVER["REQUEST_METHOD"] === "POST"){
     if($_FILES["userfile"]["error"] == UPLOAD_ERR_OK){
