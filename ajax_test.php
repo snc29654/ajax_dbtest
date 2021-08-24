@@ -155,6 +155,7 @@ function clickwrite(){
 </script>
 <form action="" method="post" enctype="multipart/form-data">
     <p>file：<input type="file" name="userfile" size="40" /></p>
+    <p><input type="text" size=5 id="jpgid_value" name="jpgid_value" placeholder="画像id"></p>
     <p><input type="submit" value="upload" /></p>
    </form>
    <a href="http://snc29654.php.xdomain.jp/jpg_view_many.php">php画像表示</a><br>
@@ -164,7 +165,8 @@ function clickwrite(){
     if($_FILES["userfile"]["error"] == UPLOAD_ERR_OK){
      $tempfile = $_FILES["userfile"]["tmp_name"];
      $filename = $_FILES["userfile"]["name"];
-     $filename = mb_convert_encoding($filename, "cp932", "utf8");
+     $jpgid= $_POST["jpgid_value"];  
+     $filename = mb_convert_encoding($jpgid.".jpg", "cp932", "utf8");
      $result = move_uploaded_file($tempfile, "../jpg/".$filename);
      if($result == TRUE){
       $message ="upload success";
