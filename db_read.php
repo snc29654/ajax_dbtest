@@ -70,7 +70,7 @@ try{
     echo strip_tags($row['kind']);      echo "\n";echo "<br>";
     echo "<textarea name=\"contents\" rows=\"10\" cols=\"80\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
     echo "<textarea name=\"answer\" rows=\"10\" cols=\"80\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
-    echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"100\"/>";
+    echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"135\"/>";
     echo "</tbody></tr></td>";
 
    
