@@ -19,7 +19,7 @@ try{
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $pdo->exec("create table if not exists kind_t1(
+    $pdo->exec("create table if not exists $dbtable(
         id int not null auto_increment primary key,
         kind varchar(40) unique,
         contents text,
@@ -46,13 +46,13 @@ try{
 
 
     if(strcmp($_POST['action'],"delall")==0){
-        $sql = "DELETE FROM kind_t1";
+        $sql = "DELETE FROM $dbtable";
     }
     if(strcmp($_POST['action'],"delid")==0){
-        $sql = "DELETE FROM kind_t1 WHERE id = '${_POST['delid_value']}'" ;
+        $sql = "DELETE FROM $dbtable WHERE id = '${_POST['delid_value']}'" ;
     }
     if(strcmp($_POST['action'],"add")==0){
-        $sql = "INSERT INTO kind_t1 SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
+        $sql = "INSERT INTO $dbtable SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
 
         if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             echo $_POST['email'];    
@@ -75,7 +75,7 @@ try{
 
     }
     if(strcmp($_POST['action'],"add_answer")==0){
-        $sql = "UPDATE kind_t1 SET answer='${_POST['answer']}' WHERE id ='${_POST['updateid_value']}' ";
+        $sql = "UPDATE $dbtable SET answer='${_POST['answer']}' WHERE id ='${_POST['updateid_value']}' ";
         //UPDATE mytbl SET price=1000 WHERE id=10;
     }
 
@@ -102,7 +102,7 @@ try{
 }
 
 try{
-    $sql = "SELECT * FROM kind_t1";
+    $sql = "SELECT * FROM $dbtable";
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
 }catch(PDOException $Exception){
