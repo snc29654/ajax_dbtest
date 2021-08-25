@@ -21,6 +21,7 @@ try{
 
     $pdo->exec("create table if not exists $dbtable(
         id int not null auto_increment primary key,
+        email varchar(255) unique,
         kind varchar(40) unique,
         contents text,
         answer text
@@ -52,7 +53,7 @@ try{
         $sql = "DELETE FROM $dbtable WHERE id = '${_POST['delid_value']}'" ;
     }
     if(strcmp($_POST['action'],"add")==0){
-        $sql = "INSERT INTO $dbtable SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
+        $sql = "INSERT INTO $dbtable SET kind = '${_POST['kind']}($date)', email = '${_POST['email']}', contents = '${_POST['contents']}';";
 
         if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             echo $_POST['email'];    
