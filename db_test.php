@@ -65,7 +65,7 @@ try{
         mb_internal_encoding("UTF-8");
         $to = $_POST['email'];
         $contents = $_POST['contents'];
-        if(mb_send_mail($to,"登録成功",$contents)){
+        if(mb_send_mail($to,"本内容を受け付けました",$contents)){
           echo "メールを送信しました";
         } else {
           echo "メールの送信に失敗しました";

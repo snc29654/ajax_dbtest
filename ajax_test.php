@@ -12,6 +12,7 @@
             $('#send').click(function()
             {
                 var data = {
+		            email : $('#email').val(),
 		            kind : $('#kind').val(),
 		            contents : $('#contents').val(),
 		            answer : $('#answer').val(),
