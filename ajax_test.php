@@ -83,6 +83,7 @@
 <body>
 <form id="testForm" name="testForm" method="post" >
 <ul>
+<li><input type="text" size=40 id="email" name="email" placeholder="あなたのメールアドレス"></li>
 <li><input type="text" size=78 id="kind" name="kind" placeholder="種別"></li>
 <li><textarea name="contents" rows="10" cols="80" id="contents" placeholder="内容" ></textarea>
 <textarea name="answer" rows="10" cols="80" id="answer" placeholder="回答" ></textarea></li>

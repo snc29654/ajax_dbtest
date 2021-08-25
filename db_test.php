@@ -43,6 +43,8 @@ try{
     $stmh = $pdo->prepare($sql);
     $stmh->execute();
     $date=date('Y年m月d日 H時i分s秒');
+
+
     if(strcmp($_POST['action'],"delall")==0){
         $sql = "DELETE FROM kind_t1";
     }
@@ -51,6 +53,26 @@ try{
     }
     if(strcmp($_POST['action'],"add")==0){
         $sql = "INSERT INTO kind_t1 SET kind = '${_POST['kind']}($date)', contents = '${_POST['contents']}';";
+
+        if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            echo $_POST['email'];    
+            echo '入力された値が不正です。';
+        }
+         
+
+
+        mb_language("Japanese");
+        mb_internal_encoding("UTF-8");
+        $to = $_POST['email'];
+        $contents = $_POST['contents'];
+        if(mb_send_mail($to,"登録成功",$contents)){
+          echo "メールを送信しました";
+        } else {
+          echo "メールの送信に失敗しました";
+        };
+  
+
+
     }
     if(strcmp($_POST['action'],"add_answer")==0){
         $sql = "UPDATE kind_t1 SET answer='${_POST['answer']}' WHERE id ='${_POST['updateid_value']}' ";
