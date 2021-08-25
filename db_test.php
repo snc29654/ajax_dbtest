@@ -21,8 +21,8 @@ try{
 
     $pdo->exec("create table if not exists $dbtable(
         id int not null auto_increment primary key,
-        email varchar(255) unique,
-        kind varchar(40) unique,
+        email varchar(255),
+        kind varchar(40),
         contents text,
         answer text
       )");
