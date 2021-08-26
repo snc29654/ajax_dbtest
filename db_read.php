@@ -53,6 +53,9 @@ try{
 }catch(PDOException $Exception){
     die('接続エラー：' .$Exception->getMessage());
 }
+file_put_contents("../id_mail.txt", "\n");
+
+
     while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
 ?>
 <?php
@@ -77,6 +80,7 @@ try{
 
     $email = $row['email'];    
     $email_list = array($id => $email);
+	file_put_contents("../id_mail.txt", $id.":".$email."\n",FILE_APPEND);
 
 
 
