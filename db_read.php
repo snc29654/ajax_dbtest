@@ -55,8 +55,10 @@ try{
 }
     while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
 ?>
-
 <?php
+    global $email_list;
+
+
 	file_put_contents("../db_log.txt", $row['id']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['kind']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
@@ -73,6 +75,10 @@ try{
     echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"135\"/>";
     echo "</tbody></tr></td>";
 
-   
+    $email = $row['email'];    
+    $email_list = array($id => $email);
+
+
+
     }
 ?>

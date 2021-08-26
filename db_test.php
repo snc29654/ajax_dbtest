@@ -2,6 +2,11 @@
 header('Content-Type: text/html; charset=UTF-8');
 include('param.php');
 
+
+global $email_list;
+
+
+
 //if(!$_POST['kind'] || !$_POST['contents']){exit("未入力あり");}
 
 file_put_contents("../from_html.txt", $_POST['kind'] ."\n",FILE_APPEND);
@@ -65,6 +70,7 @@ try{
         mb_language("Japanese");
         mb_internal_encoding("UTF-8");
         $to = $_POST['email'];
+        echo $to;
         $contents = $_POST['contents'];
         if(mb_send_mail($to,"本内容を受け付けました",$contents)){
           echo "メールを送信しました";
@@ -78,6 +84,21 @@ try{
     if(strcmp($_POST['action'],"add_answer")==0){
         $sql = "UPDATE $dbtable SET answer='${_POST['answer']}' WHERE id ='${_POST['updateid_value']}' ";
         //UPDATE mytbl SET price=1000 WHERE id=10;
+
+        $id =$_POST['updateid_value'];
+
+        mb_language("Japanese");
+        mb_internal_encoding("UTF-8");
+        $to = $email_list[$id];
+        echo $to;
+        $answer = $_POST['answer'];
+        if(mb_send_mail($to,"回答を送信しました",$answer)){
+          echo "メールを送信しました";
+        } else {
+          echo "メールの送信に失敗しました";
+        };
+
+
     }
 
 
@@ -113,6 +134,9 @@ try{
 ?>
 
 <?php
+
+    
+
 	file_put_contents("../db_log.txt", $row['id']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['kind']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
