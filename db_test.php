@@ -90,7 +90,7 @@ try{
 
         $file = file_get_contents('../id_mail.txt');
         echo $file;
-        $iko = strstr($file,$id);
+        $iko = strstr($file,$id.":");
         $str = substr($iko, 0, strcspn($iko, "\n"));
         $str1 = str_replace($id.":", '', $str);
         echo  $str1;
