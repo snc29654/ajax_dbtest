@@ -89,24 +89,24 @@ try{
 
 
         $file = file_get_contents('../id_mail.txt');
-        echo $file;
+        //echo $file;
         $iko = strstr($file,$id.":");
         $str = substr($iko, 0, strcspn($iko, "\n"));
         $str1 = str_replace($id.":", '', $str);
-        echo  $str1;
+        //echo  $str1;
 
 
         mb_language("Japanese");
         mb_internal_encoding("UTF-8");
         $to = $str1;
-        echo $to;
+        //echo $to;
         $answer = $_POST['answer'];
         if(mb_send_mail($to,"回答を送信しました",$answer)){
           echo "回答メールを送信しました";
-          echo $to;
+          //echo $to;
         } else {
           echo "回答メールの送信に失敗しました";
-          echo $to;
+          //echo $to;
         };
 
 
