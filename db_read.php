@@ -79,6 +79,17 @@ file_put_contents("../id_mail.txt", "\n");
     echo "<input type= \"text\" id= \"delseg$index\" name= \"delseg$index\"  size=\"5\"  style=\"background-color:#bde9ba\"  value= \"$id\">";
     echo "<input  type= \"submit\" value= \"削除\" onclick=\"clickseg$index()\">";
     echo "<input  type= \"submit\" value= \"回答\" onclick=\"clickanswerseg$index()\">";
+
+    echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
+    echo "<p>file：<input type=\"file\" name=\"userfile\" size=\"40\" /></p>";
+    echo "<p><input type=\"text\" size=5 id=\"jpgid_value\" name=\"jpgid_value\" value=\"$id\">";
+    echo "<input type=\"submit\" value=\"upload\" /></p>";
+    echo "</form>";
+
+
+
+
+
     echo "</tbody></tr></td>";
     $index = $index + 1;
 
