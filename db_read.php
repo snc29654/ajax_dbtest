@@ -74,10 +74,11 @@ file_put_contents("../id_mail.txt", "\n");
     echo "<tbody><tr><td>";echo "id=";echo strip_tags($row['id']);      echo "\n";echo "<br>";
     echo strip_tags($row['kind']);      echo "\n";echo "<br>";
     echo "<textarea name=\"contents\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
-    echo "<textarea name=\"answer\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
+    echo "<textarea id= \"answerseg$index\" name=\"answerseg$index\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
     echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"135\"/><br>";
     echo "<input type= \"text\" id= \"delseg$index\" name= \"delseg$index\"  size=\"5\"  style=\"background-color:#bde9ba\"  value= \"$id\">";
     echo "<input  type= \"submit\" value= \"削除\" onclick=\"clickseg$index()\">";
+    echo "<input  type= \"submit\" value= \"回答\" onclick=\"clickanswerseg$index()\">";
     echo "</tbody></tr></td>";
     $index = $index + 1;
 

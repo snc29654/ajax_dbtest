@@ -184,6 +184,177 @@ function segwrite($id){
 
 }
 
+
+
+function answersegwrite($id,$answer){
+    var data = {
+		            email : $('#email').val(),
+		            kind : $('#kind').val(),
+		            contents : $('#contents').val(),
+		            answer : $answer,
+		            action : "add_answer",
+		            delid_value : $id,
+		            updateid_value : $id
+	            };
+ 
+                $.ajax({
+                    type: "post",
+                    url: "db_test.php",
+                    data: data,
+                    success: function(data, dataType)
+                    {
+                        document.getElementById( "phplog" ).value = data ;
+				
+                    },
+                    error: function()
+                    {
+                        alert('送信失敗');
+                    }
+                });
+
+}
+
+
+
+
+function clickanswerseg0(){
+    console.log($('#answerseg0').val());
+    $answer=$('#answerseg0').val();
+    $id=$('#delseg0').val();
+    answersegwrite($id,$answer) 
+}
+
+function clickanswerseg1(){
+    console.log($('#answerseg1').val());
+    $answer=$('#answerseg1').val();
+    $id=$('#delseg1').val();
+    answersegwrite($id,$answer) 
+}
+
+function clickanswerseg2(){
+    console.log($('#answerseg2').val());
+    $answer=$('#answerseg2').val();
+    $id=$('#delseg2').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg3(){
+    console.log($('#answerseg3').val());
+    $answer=$('#answerseg3').val();
+    $id=$('#delseg3').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg4(){
+    console.log($('#answerseg4').val());
+    $answer=$('#answerseg4').val();
+    $id=$('#delseg4').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg5(){
+    console.log($('#answerseg5').val());
+    $answer=$('#answerseg5').val();
+    $id=$('#delseg5').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg6(){
+    console.log($('#answerseg6').val());
+    $answer=$('#answerseg6').val();
+    $id=$('#delseg6').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg7(){
+    console.log($('#answerseg7').val());
+    $answer=$('#answerseg7').val();
+    $id=$('#delseg7').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg8(){
+    console.log($('#answerseg8').val());
+    $answer=$('#answerseg8').val();
+    $id=$('#delseg8').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg9(){
+    console.log($('#answerseg9').val());
+    $answer=$('#answerseg9').val();
+    $id=$('#delseg9').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg10(){
+    console.log($('#answerseg10').val());
+    $answer=$('#answerseg10').val();
+    $id=$('#delseg10').val();
+    answersegwrite($id,$answer) 
+}
+
+
+
+function clickanswerseg11(){
+    console.log($('#answerseg11').val());
+    $answer=$('#answerseg11').val();
+    $id=$('#delseg11').val();
+    answersegwrite($id,$answer) 
+}
+
+function clickanswerseg12(){
+    console.log($('#answerseg12').val());
+    $answer=$('#answerseg12').val();
+    $id=$('#delseg12').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg13(){
+    console.log($('#answerseg13').val());
+    $answer=$('#answerseg13').val();
+    $id=$('#delseg13').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg14(){
+    console.log($('#answerseg14').val());
+    $answer=$('#answerseg14').val();
+    $id=$('#delseg14').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg15(){
+    console.log($('#answerseg15').val());
+    $answer=$('#answerseg15').val();
+    $id=$('#delseg15').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg16(){
+    console.log($('#answerseg16').val());
+    $answer=$('#answerseg16').val();
+    $id=$('#delseg16').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg17(){
+    console.log($('#answerseg17').val());
+    $answer=$('#answerseg17').val();
+    $id=$('#delseg17').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg18(){
+    console.log($('#answerseg18').val());
+    $answer=$('#answerseg18').val();
+    $id=$('#delseg18').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg19(){
+    console.log($('#answerseg19').val());
+    $answer=$('#answerseg19').val();
+    $id=$('#delseg19').val();
+    answersegwrite($id,$answer) 
+}
+function clickanswerseg20(){
+    console.log($('#answerseg20').val());
+    $answer=$('#answerseg20').val();
+    $id=$('#delseg20').val();
+    answersegwrite($id,$answer) 
+}
+
+
+
+
+
+
 function clickseg0(){
     console.log($('#delseg0').val());
     $id=$('#delseg0').val();
