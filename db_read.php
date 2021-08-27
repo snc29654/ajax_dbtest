@@ -76,7 +76,12 @@ file_put_contents("../id_mail.txt", "\n");
     echo "<textarea name=\"contents\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
     echo "<textarea name=\"answer\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
     echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"135\"/>";
+    echo "<input type= \"view\" name= \"del\"  size=\"5\"  value= \"$id\">";
+    echo "<input type= \"submit\" value= \"無操作\">";
     echo "</tbody></tr></td>";
+
+
+
 
     $email = $row['email'];    
     $email_list = array($id => $email);
