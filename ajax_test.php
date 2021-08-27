@@ -246,6 +246,51 @@ function clickseg11(){
     $id=$('#delseg11').val();
     segwrite($id) 
 }
+function clickseg12(){
+    console.log($('#delseg12').val()); 
+    $id=$('#delseg12').val();
+    segwrite($id) 
+}
+function clickseg13(){
+    console.log($('#delseg13').val()); 
+    $id=$('#delseg13').val();
+    segwrite($id) 
+}
+function clickseg14(){
+    console.log($('#delseg14').val()); 
+    $id=$('#delseg14').val();
+    segwrite($id) 
+}
+function clickseg15(){
+    console.log($('#delseg15').val()); 
+    $id=$('#delseg15').val();
+    segwrite($id) 
+}
+function clickseg16(){
+    console.log($('#delseg16').val()); 
+    $id=$('#delseg16').val();
+    segwrite($id) 
+}
+function clickseg17(){
+    console.log($('#delseg17').val()); 
+    $id=$('#delseg17').val();
+    segwrite($id) 
+}
+function clickseg18(){
+    console.log($('#delseg18').val()); 
+    $id=$('#delseg18').val();
+    segwrite($id) 
+}
+function clickseg19(){
+    console.log($('#delseg19').val()); 
+    $id=$('#delseg19').val();
+    segwrite($id) 
+}
+function clickseg20(){
+    console.log($('#delseg20').val()); 
+    $id=$('#delseg20').val();
+    segwrite($id) 
+}
 
 
 
