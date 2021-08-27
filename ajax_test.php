@@ -154,6 +154,20 @@ function clickwrite(){
     }
 
 }
+
+function clickseg(){
+
+
+    alert("現在未サポートです");    
+
+
+}
+
+
+
+
+
+
 </script>
 <form action="" method="post" enctype="multipart/form-data">
     <p>file：<input type="file" name="userfile" size="40" /></p>
