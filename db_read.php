@@ -55,7 +55,7 @@ try{
 }
 file_put_contents("../id_mail.txt", "\n");
 
-
+    $index = 0;
     while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
 ?>
 <?php
@@ -76,9 +76,10 @@ file_put_contents("../id_mail.txt", "\n");
     echo "<textarea name=\"contents\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
     echo "<textarea name=\"answer\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
     echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"135\"/><br>";
-    echo "<input type= \"text\" id= \"delseg\" name= \"delseg\"  size=\"5\"  style=\"background-color:#bde9ba\"  value= \"$id\">";
-    echo "<input  type= \"submit\" value= \"無操作\" onclick=\"clickseg()\">";
+    echo "<input type= \"text\" id= \"delseg$index\" name= \"delseg$index\"  size=\"5\"  style=\"background-color:#bde9ba\"  value= \"$id\">";
+    echo "<input  type= \"submit\" value= \"削除\" onclick=\"clickseg$index()\">";
     echo "</tbody></tr></td>";
+    $index = $index + 1;
 
 
 

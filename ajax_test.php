@@ -155,15 +155,97 @@ function clickwrite(){
 
 }
 
-function clickseg(){
 
-
-    alert("現在未サポートです");    
-
+function segwrite($id){
+    var data = {
+		            email : $('#email').val(),
+		            kind : $('#kind').val(),
+		            contents : $('#contents').val(),
+		            answer : $('#answer').val(),
+		            action : "delid",
+		            delid_value : $id,
+		            updateid_value : $('#updateid_value').val()
+	            };
+ 
+                $.ajax({
+                    type: "post",
+                    url: "db_test.php",
+                    data: data,
+                    success: function(data, dataType)
+                    {
+                        document.getElementById( "phplog" ).value = data ;
+				
+                    },
+                    error: function()
+                    {
+                        alert('送信失敗');
+                    }
+                });
 
 }
 
+function clickseg0(){
+    console.log($('#delseg0').val());
+    $id=$('#delseg0').val();
+    segwrite($id) 
+}
 
+function clickseg1(){
+    console.log($('#delseg1').val()); 
+    $id=$('#delseg1').val();
+    segwrite($id) 
+}
+
+function clickseg2(){
+    console.log($('#delseg2').val()); 
+    $id=$('#delseg2').val();
+    segwrite($id) 
+}
+function clickseg3(){
+    console.log($('#delseg3').val()); 
+    $id=$('#delseg3').val();
+    segwrite($id) 
+}
+function clickseg4(){
+    console.log($('#delseg4').val()); 
+    $id=$('#delseg4').val();
+    segwrite($id) 
+}
+function clickseg5(){
+    console.log($('#delseg5').val()); 
+    $id=$('#delseg5').val();
+    segwrite($id) 
+}
+function clickseg6(){
+    console.log($('#delseg6').val()); 
+    $id=$('#delseg6').val();
+    segwrite($id) 
+}
+function clickseg7(){
+    console.log($('#delseg7').val()); 
+    $id=$('#delseg7').val();
+    segwrite($id) 
+}
+function clickseg8(){
+    console.log($('#delseg8').val()); 
+    $id=$('#delseg8').val();
+    segwrite($id) 
+}
+function clickseg9(){
+    console.log($('#delseg9').val()); 
+    $id=$('#delseg9').val();
+    segwrite($id) 
+}
+function clickseg10(){
+    console.log($('#delseg10').val()); 
+    $id=$('#delseg10').val();
+    segwrite($id) 
+}
+function clickseg11(){
+    console.log($('#delseg11').val()); 
+    $id=$('#delseg11').val();
+    segwrite($id) 
+}
 
 
 
