@@ -174,6 +174,7 @@ function segwrite($id){
                     success: function(data, dataType)
                     {
                         document.getElementById( "phplog" ).value = data ;
+                        alert("id="+$id + "を削除しました。");
 				
                     },
                     error: function()
@@ -204,7 +205,7 @@ function answersegwrite($id,$answer){
                     success: function(data, dataType)
                     {
                         document.getElementById( "phplog" ).value = data ;
-                        alert("id="+$id + "の回答を登録しました。")
+                        alert("id="+$id + "の回答を登録しました。");
                     },
                     error: function()
                     {
