@@ -76,14 +76,14 @@ file_put_contents("../id_mail.txt", "\n");
     echo "<textarea name=\"contents\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
     echo "<textarea id= \"answerseg$index\" name=\"answerseg$index\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
     echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"135\"/><br>";
-    echo "<input type= \"text\" id= \"delseg$index\" name= \"delseg$index\"  size=\"5\"  style=\"background-color:#bde9ba\"  value= \"$id\">";
+    echo "<input type= \"hidden\" id= \"delseg$index\" name= \"delseg$index\"  size=\"5\"  style=\"background-color:#bde9ba\"  value= \"$id\">";
     if($index < 20){    
         echo "<input  type= \"submit\" value= \"削除\" onclick=\"clickseg$index()\">";
         echo "<input  type= \"submit\" value= \"回答\" onclick=\"clickanswerseg$index()\">";
     }
     echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
     echo "<p>file：<input type=\"file\" name=\"userfile\" size=\"40\" /></p>";
-    echo "<p><input type=\"text\" size=5 id=\"jpgid_value\" name=\"jpgid_value\" value=\"$id\">";
+    echo "<p><input type=\"hidden\" size=5 id=\"jpgid_value\" name=\"jpgid_value\" value=\"$id\">";
     echo "<input type=\"submit\" value=\"upload\" /></p>";
     echo "</form>";
 
