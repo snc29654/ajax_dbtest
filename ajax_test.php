@@ -28,6 +28,7 @@
                     success: function(data, dataType)
                     {
                         document.getElementById( "phplog" ).value = data ;
+                        alert("新規追加しました");
 				
                     },
                     error: function()
@@ -35,6 +36,43 @@
                         alert('送信失敗');
                     }
                 });
+
+
+                if( $('#action').val()=="add"){
+                    alert("新規追加中です");
+
+
+                    var data = {
+		            kind : $('#kind').val(),
+		            contents : $('#contents').val(),
+		            answer : $('#answer').val(),
+		            actionread : "idmax",
+		            srch_word : $('#srch_word').val(),
+		            srchid_value : $('#srchid_value').val()
+
+                    };
+ 
+                    $.ajax({
+                        type: "post",
+                        url: "db_read.php",
+                        data: data,
+                        success: function(data, dataType)
+                        {
+                            document.getElementById( "phplog" ).value = data ;
+                            $('#result').html(data);
+                        },
+                        error: function()
+                        {
+                            alert('送信失敗');
+                        }
+                    });
+
+
+
+
+                }
+
+
 
                 return false;
             });
