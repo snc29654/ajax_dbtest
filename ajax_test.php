@@ -183,6 +183,35 @@ function segwrite($id){
                     }
                 });
 
+                alert("削除待ちです");
+
+                var data = {
+		            kind : $('#kind').val(),
+		            contents : $('#contents').val(),
+		            answer : $('#answer').val(),
+		            actionread : "readall",
+		            srch_word : $('#srch_word').val(),
+		            srchid_value : $('#srchid_value').val()
+
+                };
+ 
+                $.ajax({
+                    type: "post",
+                    url: "db_read.php",
+                    data: data,
+                    success: function(data, dataType)
+                    {
+                        document.getElementById( "phplog" ).value = data ;
+                        $('#result').html(data);
+                    },
+                    error: function()
+                    {
+                        alert('送信失敗');
+                    }
+                });
+ 
+
+
 }
 
 
