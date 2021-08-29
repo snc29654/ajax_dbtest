@@ -546,6 +546,7 @@ function clickseg20(){
     <p><input type="submit" value="upload" /></p>
    </form>
    <a href="jpg_display.php">画像表示</a><br/>
+   <a href="document.php">操作説明書</a><br/>
 
    <?php
    if($_SERVER["REQUEST_METHOD"] === "POST"){
