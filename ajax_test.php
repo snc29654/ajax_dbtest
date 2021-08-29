@@ -28,8 +28,12 @@
                     success: function(data, dataType)
                     {
                         document.getElementById( "phplog" ).value = data ;
-                        alert("新規追加しました");
-				
+
+                        if( $('#action').val()=="add"){
+
+                            alert("新規追加しました");
+                        }
+                            
                     },
                     error: function()
                     {
