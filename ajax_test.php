@@ -105,6 +105,7 @@
 <p class="more"><input id="logread" type="submit" value="DB読み出し"onclick="clickread()"/>
 <select name="actionread" id="actionread">
     <option value="readall">全読み出し（読み出し）</option>
+    <option value="idmax">最後読み出し（読み出し）</option>
     <option value="srch">検索ワード選択（読み出し）</option>
     <option value="srchid">検索ID（読み出し）</option>
     <option value="kindselect">種別選択（読み出し）</option>

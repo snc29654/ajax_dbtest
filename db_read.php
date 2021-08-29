@@ -43,6 +43,10 @@ try{
     }else if(strcmp($_POST['actionread'],"readall")==0){
 
         $sql = "SELECT * FROM $dbtable";
+    }else if(strcmp($_POST['actionread'],"idmax")==0){
+
+        $sql = "SELECT *  FROM  $dbtable WHERE  id=(SELECT MAX(id) FROM $dbtable)";
+
     }else{
  
     }
