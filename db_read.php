@@ -79,16 +79,12 @@ file_put_contents("../id_mail.txt", "\n");
     echo strip_tags($row['kind']);      echo "\n";echo "<br>";
     echo "<p><input type=\"hidden\" size=5 id=\"delseg$index\" name=\"delseg$index\" value=\"$id\">";
     echo "<textarea name=\"contents\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
-    echo "<textarea id= \"answerseg$index\" name=\"answerseg$index\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
 
     if(strcmp($_POST['actionread'],"srchid")==0){    
         echo "<img src=\"../jpg/$id.jpg\" /><br>";
     }else{
         echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"135\"/><br>";
     }    
-    if($index < 20){    
-        echo "<input  type= \"submit\" value= \"回答\" onclick=\"clickanswerseg$index()\">";
-    }
     echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
     echo "<p>file：<input type=\"file\" name=\"userfile\" size=\"40\" /></p>";
     echo "<p><input type=\"hidden\" size=5 id=\"jpgid_value\" name=\"jpgid_value\" value=\"$id\">";
@@ -104,6 +100,14 @@ file_put_contents("../id_mail.txt", "\n");
     echo "<p><input type=\"hidden\" size=5 id=\"delseg\" name=\"delseg\" value=\"$id\">";
     echo "<input type=\"submit\" value=\"削除\" /></p>";
     echo "</form>";
+
+
+    echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
+    echo "<p><input type=\"hidden\" size=5 id=\"answerid\" name=\"answerid\" value=\"$id\">";
+    echo "<textarea id= \"answer\" name=\"answer\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
+    echo "<input type=\"submit\" value=\"回答\" /></p>";
+    echo "</form>";
+
 
 
 
