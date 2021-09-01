@@ -537,8 +537,6 @@ function clickseg20(){
 }
 
 
-
-
 </script>
 <form action="" method="post" enctype="multipart/form-data">
     <p>file：<input type="file" name="userfile" size="40" /></p>
@@ -550,6 +548,15 @@ function clickseg20(){
 
    <?php
    if($_SERVER["REQUEST_METHOD"] === "POST"){
+
+    if(isset($_POST['eqjpgid'])){
+        $id = $_POST['eqjpgid'];
+        echo "<img src=\"../jpg/$id.jpg\" ><br>";
+
+        exit;
+    }
+
+
     if($_FILES["userfile"]["error"] == UPLOAD_ERR_OK){
      $tempfile = $_FILES["userfile"]["tmp_name"];
      $filename = $_FILES["userfile"]["name"];
