@@ -557,6 +557,128 @@ function clickseg20(){
     }
 
 
+
+    if(isset($_POST['contentsid'])){
+        $id = $_POST['contentsid'];
+        $answer = $_POST['contents'];
+
+
+        include('param.php');
+
+
+        global $email_list;
+        
+        
+        
+        try{
+            
+        
+            $pdo = new PDO(
+                $dsn,
+                $user,
+                $pass
+            );
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+            $pdo->exec("create table if not exists $dbtable(
+                id int not null auto_increment primary key,
+                email varchar(255),
+                kind varchar(40),
+                contents text,
+                answer text
+              )");
+          
+        
+        
+        
+            $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $pdo->query("SET NAMES UTF8;");
+        
+        
+        }catch(PDOException $Exception){
+            die('接続できません：' .$Exception->getMessage());
+        }
+        
+        try{
+        
+            $sql = "SET NAMES UTF8;";
+            $stmh = $pdo->prepare($sql);
+            $stmh->execute();
+            $date=date('Y年m月d日 H時i分s秒');
+        
+        
+                $sql = "UPDATE $dbtable SET contents='${_POST['contents']}' WHERE id ='${_POST['contentsid']}' ";
+                //UPDATE mytbl SET price=1000 WHERE id=10;
+        
+                $id =$_POST['contentsid'];
+        
+        
+            $stmh = $pdo->prepare($sql);
+            $stmh->execute();
+        
+        
+        }catch(PDOException $Exception){
+            die('接続エラー：' .$Exception->getMessage());
+        }
+        
+        try{
+            $pdo = new PDO(
+                $dsn,
+                $user,
+                $pass
+            );
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        }catch(PDOException $Exception){
+            die('接続エラー：' .$Exception->getMessage());
+        }
+        
+        try{
+            $sql = "SELECT * FROM $dbtable";
+            $stmh = $pdo->prepare($sql);
+            $stmh->execute();
+        }catch(PDOException $Exception){
+            die('接続エラー：' .$Exception->getMessage());
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        exit;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if(isset($_POST['answerid'])){
         $id = $_POST['answerid'];
         $answer = $_POST['answer'];
