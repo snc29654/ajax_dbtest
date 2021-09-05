@@ -1,1 +1,13 @@
 body {background-color: rgb(121, 204, 245);}
+label {
+    font-size:  30px;    /* 文字サイズ指定 */
+}
+input {
+    font-size:  30px;    /* 文字サイズ指定 */
+}
+textarea {
+    font-size:  30px;    /* 文字サイズ指定 */
+}
+select {
+    font-size:  30px;    /* 文字サイズ指定 */
+}
