@@ -58,6 +58,14 @@ try{
         $sql = "DELETE FROM $dbtable WHERE id = '${_POST['delid_value']}'" ;
     }
     if(strcmp($_POST['action'],"add")==0){
+        if($_POST['kind']==""){
+            echo "種別未入力";
+            exit;
+        }
+        if($_POST['contents']==""){
+            echo "内容未入力";
+            exit;
+        }
         $sql = "INSERT INTO $dbtable SET kind = '${_POST['kind']}($date)', email = '${_POST['email']}', contents = '${_POST['contents']}';";
 
         if (!$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
