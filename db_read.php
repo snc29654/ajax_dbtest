@@ -97,11 +97,12 @@ file_put_contents("../id_mail.txt", "\n");
 
     echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
     echo "<p><input type=\"hidden\" size=5 id=\"eqjpgid\" name=\"eqjpgid\" value=\"$id\">";
-    echo "<input type=\"submit\" value=\"原寸\" /></p>";
+    echo "<input type=\"submit\" value=\"画像表示\" /></p>";
     echo "</form>";
 
     echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
     echo "<p><input type=\"hidden\" size=5 id=\"delseg\" name=\"delseg\" value=\"$id\">";
+    echo "<p>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿";
     echo "<input type=\"submit\" value=\"削除\" /></p>";
     echo "</form>";
 
