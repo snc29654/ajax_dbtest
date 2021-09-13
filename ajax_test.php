@@ -303,6 +303,20 @@ function clickwrite(){
 
             if(isset($_POST['answerid'])){
                 $sql = "UPDATE $dbtable SET answer='${_POST['answer']}' WHERE id ='${_POST['answerid']}' ";
+
+
+                mb_language("Japanese");
+                mb_internal_encoding("UTF-8");
+                $to = $_POST['email'];
+                echo $to;
+                $answer = $_POST['answer'];
+                if(mb_send_mail($to,"本内容を受け付けました",$answer)){
+                  echo "回答メールを送信しました";
+                } else {
+                  echo "回答メールの送信に失敗しました";
+                };
+          
+
             }    
 
             if(isset($_POST['delseg'])){

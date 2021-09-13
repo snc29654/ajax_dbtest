@@ -71,6 +71,7 @@ file_put_contents("../id_mail.txt", "\n");
 	file_put_contents("../db_log.txt", $row['contents']."\n",FILE_APPEND);
 	file_put_contents("../db_log.txt", $row['answer']."\n",FILE_APPEND);
 
+    $email = $row['email'];
     $id = $row['id'];
     $contents = $row['contents'];
     $answer=$row['answer'];        
@@ -109,6 +110,7 @@ file_put_contents("../id_mail.txt", "\n");
 
     echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
     echo "<p><input type=\"hidden\" size=5 id=\"answerid\" name=\"answerid\" value=\"$id\">";
+    echo "<p><input type=\"hidden\" size=5 id=\"email\" name=\"email\" value=\"$email\">";
     echo "<textarea id= \"answer\" name=\"answer\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"answer\" placeholder=\"回答\" >$answer</textarea>";
     echo "<input type=\"submit\" value=\"回答\" /></p>";
     echo "</form>";
