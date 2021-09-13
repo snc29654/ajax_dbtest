@@ -81,6 +81,7 @@ file_put_contents("../id_mail.txt", "\n");
     echo "<p><input type=\"hidden\" size=5 id=\"delseg$index\" name=\"delseg$index\" value=\"$id\">";
     echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
     echo "<p><input type=\"hidden\" size=5 id=\"contentsid\" name=\"contentsid\" value=\"$id\">";
+    echo "<p><input type=\"hidden\" size=5 id=\"email\" name=\"email\" value=\"$email\">";
     echo "<textarea id=\"contents\" name=\"contents\" rows=\"10\" cols=\"80\" style=\"background-color:#bde9ba\" id=\"contents\" placeholder=\"内容\" >$contents</textarea>";
     echo "<input type=\"submit\" value=\"内容更新\" /></p>";
     echo "</form>";
