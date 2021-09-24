@@ -15,7 +15,7 @@ if ($fp) {
             $date=date('Y年m月d日 H時i分s秒');
             mb_language("Japanese");
             mb_internal_encoding("UTF-8");
-            if(mb_send_mail($email_to,"ajax_dbtest","アクセスしました")){
+            if(mb_send_mail($email_to,"ajax_dbtest",$_SERVER["REMOTE_ADDR"])){
             } else {
               echo "mail fail";
             };
