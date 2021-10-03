@@ -90,7 +90,7 @@ file_put_contents("../id_mail.txt", "\n");
     if(strcmp($_POST['actionread'],"srchid")==0){    
         echo "<img src=\"../jpg/$id.jpg\" /><br>";
     }else{
-        echo "<img src=\"../jpg/$id.jpg\" width=\"150\" height=\"135\"/><br>";
+        echo "<img src=\"../jpg/$id.jpg\" width=\"600\" height=\"540\"/><br>";
     }    
     echo "<form action=\"\" method=\"post\" enctype=\"multipart/form-data\">";
     echo "<p>file：<input type=\"file\" name=\"userfile\" size=\"40\" /></p>";
