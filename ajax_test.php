@@ -195,8 +195,8 @@ echo '</p>';
 <li><input type="text" size=40 id="email" name="email" placeholder="あなたのメールアドレス"></li>
 <li><input type="text" size=78 id="kind" name="kind" placeholder="種別"></li>
 <li><textarea name="contents" rows="10" cols="80" id="contents" placeholder="内容" ></textarea>
-<textarea name="answer" rows="10" cols="80" id="answer" placeholder="回答" ></textarea></li>
-<li><textarea name="phplog" rows="10" cols="80" id="phplog" placeholder="実行ログ" ></textarea></li>
+<textarea name="answer" rows="1" cols="80" id="answer" placeholder="回答" ></textarea></li>
+<li><textarea name="phplog" rows="1" cols="80" id="phplog" placeholder="実行ログ" ></textarea></li>
 <li><input type="text" size=20 id="srch_word" name="srch_word" placeholder="検索ワード">
 <input type="text" size=5 id="srchid_value" name="srchid_value" placeholder="検索id">
 <input type="text" size=5 id="delid_value" name="delid_value" placeholder="削除id">
